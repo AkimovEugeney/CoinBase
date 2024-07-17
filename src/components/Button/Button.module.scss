@@ -1,0 +1,21 @@
+.button {
+  padding: 13px 20px;
+  background: var(--color-linear);
+  border-radius: 100px;
+
+  color: #fff;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: center;
+  transition: outline .3s ease-in-out, opacity .3s ease-in-out;
+
+  &:focus-visible {
+    outline: 1px solid #ba56e2;
+  }
+
+  &:hover {
+    opacity: 0.8;;
+  }
+}

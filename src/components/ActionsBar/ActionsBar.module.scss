@@ -1,0 +1,12 @@
+.actionBarBtn {
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
+
+  & span {
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-text);
+    border-radius: 50%;
+  }
+}
