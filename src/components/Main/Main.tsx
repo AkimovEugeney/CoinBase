@@ -3,7 +3,6 @@ import './Main.scss'
 import { Overview } from '../../pages/Overview/Overview'
 import { useEffect, useState } from 'react'
 import { Users } from '../../pages/Users/Users'
-import { TotalCard } from '../TotalCards/TotalCard/TotalCard'
 
 type TPages = {
   title: string
