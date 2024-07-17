@@ -68,6 +68,7 @@ button {
   -moz-osx-font-smoothing: grayscale;
 
   --color-light: #fff;
+  --color-gray: #858585;
   --color-linear: linear-gradient(
     184.5deg,
     rgb(253, 116, 155) 4.426%,
