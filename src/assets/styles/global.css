@@ -52,3 +52,13 @@ body {
 font-size: 16px;
 font-weight: 700;
 }
+
+.main::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey; /* Ползунок темно-серого цвета */
+  border: 2px solid white; /* С белыми границами */
+}
