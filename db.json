@@ -1,0 +1,109 @@
+{
+  "totals": [
+    {
+      "title": "Total Number Of Users",
+      "count": "1000",
+      "precent": 22.8,
+      "trend": true
+    },
+    {
+      "title": "Total Number Of Agents",
+      "count": "5000",
+      "precent": 11.8,
+      "trend": false
+    },
+    {
+      "title": "Total Number Of Transactions",
+      "count": "7000",
+      "precent": 11.8,
+      "trend": false
+    }
+  ],
+  "conversion-rate": [
+    {
+      "title": "iTunes Card",
+      "items": [
+        {
+          "name": "USA Physical",
+          "value": "N400.00"
+        },
+        {
+          "name": "USA E-Code card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK Physical Card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK E-Code Card",
+          "value": "N400.00"
+        }
+      ]
+    },
+    {
+      "title": "Amazon Card",
+      "items": [
+        {
+          "name": "USA Physical",
+          "value": "N400.00"
+        },
+        {
+          "name": "USA E-Code card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK Physical Card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK E-Code Card",
+          "value": "N400.00"
+        }
+      ]
+    },
+    {
+      "title": "Bitcoin",
+      "items": [
+        {
+          "name": "Bitcoin BTC",
+          "value": "N400.00"
+        },
+        {
+          "name": "Bitcoin BTC",
+          "value": "N400.00"
+        },
+        {
+          "name": "Bitcoin BTC",
+          "value": "N400.00"
+        },
+        {
+          "name": "Bitcoin BTC",
+          "value": "N400.00"
+        }
+      ]
+    },
+    {
+      "title": "iTunes Cards",
+      "items": [
+        {
+          "name": "USA Physical",
+          "value": "N400.00"
+        },
+        {
+          "name": "USA E-Code card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK Physical Card",
+          "value": "N400.00"
+        },
+        {
+          "name": "UK E-Code Card",
+          "value": "N400.00"
+        }
+      ]
+    }
+  ]
+
+}

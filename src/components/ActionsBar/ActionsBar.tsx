@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, useEffect, useRef, useState } from 'react'
-import styles from './ActionsBar.module.scss';
+import styles from './ActionsBar.module.scss'
 
 
 export type TActionBarList = {
