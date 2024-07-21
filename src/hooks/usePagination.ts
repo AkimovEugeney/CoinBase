@@ -1,32 +1,42 @@
-import {useCallback, useState } from 'react'
-
-
-type TUsePaginationState = {
-  startIndex: number;
+import { useState } from 'react';
+type TUsePaginationState<T> = {
+  sliceData: T[];
   handleClickNext: () => void;
   handleClickPrev: () => void;
-  isNext: boolean;  
-}
+  canSelectNext: boolean;
+  canSelectPrev: boolean;
+};
 
-export const usePagination = (length: number | undefined, pageSize: number): TUsePaginationState => {
-  const [startIndex, setStartIndex] = useState(0);
+export const usePagination = <T>(
+  data:T[],
+  perPage: number
+): TUsePaginationState<T> => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(data.length / perPage);
 
-  const handleClickNext = useCallback(() => {
-    if (length) {
-      setStartIndex(prevIndex => Math.min(prevIndex + pageSize, length - 1));
-    }
-  }, [length, pageSize]);
+  const handleClickNext = () => {
+    if (currentPage < totalPages) setCurrentPage(prevPage => prevPage + 1);
+    console.log(totalPages);
+    
+  };
 
-  const handleClickPrev = useCallback(() => {
-    setStartIndex(prevIndex => Math.max(prevIndex - pageSize, 0));
-  }, [pageSize]);
+  const handleClickPrev = () => {
+    if (currentPage > 1) setCurrentPage(prevPage => prevPage - 1);
+  };
 
-  const isNext = length ? startIndex + pageSize < length : false;
+  const canSelectNext = currentPage < totalPages;
+  const canSelectPrev = currentPage > 1;
+
+  const sliceData = data?.slice(
+    (currentPage - 1) * perPage,
+    currentPage * perPage
+  );
 
   return {
-    startIndex,
+    sliceData,
     handleClickNext,
     handleClickPrev,
-    isNext,
-  }
-}
+    canSelectNext,
+    canSelectPrev,
+  };
+};

@@ -8,10 +8,7 @@ import styles from './ConversionRateList.module.scss';
 
 export const ConversionRateList = () => {
   const { data, isSuccess, isPending, isError, error } = useConversionRate();
-  const elementsPerPage: number = 3;
-
-  const { startIndex, handleClickNext, handleClickPrev, isNext } =
-    usePagination(data?.length, elementsPerPage);
+  const pagination = usePagination(data ?? [], 3);
 
   return (
     <div className={styles.wrapp}>
@@ -22,7 +19,7 @@ export const ConversionRateList = () => {
       >
         {isPending && <Loader />}
         {isSuccess &&
-          data.slice(startIndex, startIndex + elementsPerPage).map(item => (
+          pagination.sliceData.map(item => (
             <li key={item.title}>
               <ConversionRateItem data={item} />
             </li>
@@ -33,11 +30,11 @@ export const ConversionRateList = () => {
       </ul>
       <div className={styles.btnWrapp}>
         <ButtonArrow
-          handleClick={handleClickNext}
-          isDisabled={isError || isPending || !isNext}
+          handleClick={pagination.handleClickNext}
+          isDisabled={isError || isPending || !pagination.canSelectNext}
         />
-        {startIndex > 0 && (
-          <ButtonArrow type='left' handleClick={handleClickPrev} />
+        {pagination.canSelectPrev && (
+          <ButtonArrow type='left' handleClick={pagination.handleClickPrev} />
         )}
       </div>
     </div>
