@@ -27,7 +27,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
       <div className='overview-inner'>
         <TotalCards widthActionBar={widthActionBar} />
         
-        {showItems.length !== 0 ? showItems.includes('201') ? null : (
+        {showItems.includes('200') ? null : (
           <OverviewSection
           id='200'
           title='Conversion Rate to Naira'
@@ -35,14 +35,14 @@ export const Overview: FC<TOverview> = ({ title }) => {
         >
           <ConversionRateList />
         </OverviewSection>
-        ) : null}
-        {showItems.length !== 0 ? showItems.includes('201') ? null : (
+        )}
+        {showItems.includes('201') ? null : (
           <OverviewSectionTrans id='201' title='Transactions' setShowItems= {setShowItems} showItems={showItems}>
           Hi welcome, this page is the general overview section of the admin
           panel which you could edit and modify the view of the page to ya’
           preferred taste.
         </OverviewSectionTrans>
-        ) : null}
+        )}
       </div>
     </>
   );
