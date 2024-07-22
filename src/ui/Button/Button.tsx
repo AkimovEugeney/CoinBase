@@ -6,6 +6,7 @@ interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   isDisabled?: boolean;
   type?: "submit" | "reset" | "button";
+  colorTheme?: 'white';
 }
 
 export const Button: FC<IButtonProps> = ({
@@ -13,6 +14,7 @@ export const Button: FC<IButtonProps> = ({
   isDisabled,
   children,
   type = 'button',
+  colorTheme,
   ...props
 }) => {
   return (
@@ -20,9 +22,10 @@ export const Button: FC<IButtonProps> = ({
     className={styles.button}
     type={type}
     disabled={isDisabled || isLoading}
+    data-color-theme={colorTheme}
     {...props}
     >
-      {isLoading ? <Loader color="pink" /> : children}
+      {isLoading ? <Loader color="pink" /> : <p>{children}</p>}
     </button>
   )
 };

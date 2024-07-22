@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { API_URL } from './apiUrl'
 
 export const TotalSchema = z.object({
+  id: z.string(),
   title: z.string(),
   count: z.string(),
   precent: z.number(),

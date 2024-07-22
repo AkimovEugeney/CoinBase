@@ -1,26 +1,23 @@
 import { FC, useContext } from 'react';
-import { TActionBarList } from '../../components/ActionsBar/ActionsBar';
 import { ConversionRateList } from '../../components/ConversionRateList/ConversionRateList';
+import { OverviewSectionTrans } from '../../components/OverviewSectionTrans';
 import { TotalCards } from '../../components/TotalCards/TotalCards';
-import { useTotalList } from '../../hooks/useTotalList';
 import { ThemeContext } from '../../Providers/ThemeProvider';
 import { Icon } from '../../ui/Icon/Icon';
 import './Overview.scss';
 import { OverviewSection } from './OverviewSection/OverviewSection';
+import { useActionsBarOverview } from '../../hooks/useActionsBarOverview'
 
 type TOverview = {
   title: string;
 };
 
-const actionsBarList: TActionBarList[] = [
-  { title: 'View' },
-  { title: 'Delete' },
-];
 const widthActionBar = '63';
 
 export const Overview: FC<TOverview> = ({ title }) => {
   const [theme] = useContext(ThemeContext);
-  const totalListQuery = useTotalList();
+  const { showItems, setShowItems } = useActionsBarOverview();
+
   return (
     <>
       <div className='main-title-wrapp overview-title-wrapp'>
@@ -28,18 +25,24 @@ export const Overview: FC<TOverview> = ({ title }) => {
         <Icon name='calendar' isWhite={theme === 'dark'} />
       </div>
       <div className='overview-inner'>
-        <TotalCards
-          data={totalListQuery.data}
-          widthActionBar={widthActionBar}
-          actionsBarList={actionsBarList}
-        />
-        <OverviewSection
+        <TotalCards widthActionBar={widthActionBar} />
+        
+        {showItems.length !== 0 ? showItems.includes('201') ? null : (
+          <OverviewSection
+          id='200'
           title='Conversion Rate to Naira'
           widthActionBar={widthActionBar}
-          actionBarList={actionsBarList}
         >
           <ConversionRateList />
         </OverviewSection>
+        ) : null}
+        {showItems.length !== 0 ? showItems.includes('201') ? null : (
+          <OverviewSectionTrans id='201' title='Transactions' setShowItems= {setShowItems} showItems={showItems}>
+          Hi welcome, this page is the general overview section of the admin
+          panel which you could edit and modify the view of the page to ya’
+          preferred taste.
+        </OverviewSectionTrans>
+        ) : null}
       </div>
     </>
   );

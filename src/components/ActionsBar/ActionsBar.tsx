@@ -4,14 +4,15 @@ import styles from './ActionsBar.module.scss'
 
 export type TActionBarList = {
   title: string;
-  handleFn?: () => void;
+  handleFn: (id:string) => void;
 }
 interface IActionsBarProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
   list: TActionBarList[];
+  id: string;
 }
 
-export const ActionsBar: FC<IActionsBarProps> = ({width, list, ...props}) => {
+export const ActionsBar: FC<IActionsBarProps> = ({width, list, id, ...props}) => {
   const [isActive, setIsActive] = useState(false);
   const actionBarRef = useRef<HTMLDivElement>(null);
 
@@ -44,7 +45,7 @@ export const ActionsBar: FC<IActionsBarProps> = ({width, list, ...props}) => {
         {list.map((item) => {
           return (
             <li key={item.title}>
-              <button onClick={item.handleFn}>{item.title}</button>
+              <button onClick={() => item.handleFn(id)}>{item.title}</button>
             </li>
           )
         })}

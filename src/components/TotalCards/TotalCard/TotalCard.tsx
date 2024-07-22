@@ -30,6 +30,7 @@ export const TotalCard: FC<ITotalCardProps> = ({
         </div>
       </div>
       <ActionsBar
+        id={data.id}
         width={widthActionBar}
         list={actionsBarList}
         style={{ top: '22px', right: '22px' }}
