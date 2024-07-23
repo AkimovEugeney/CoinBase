@@ -2,23 +2,23 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { TotalCard } from './TotalCard';
 import styles from './TotalCards.module.scss';
 import { useTotalList } from '../../hooks/useTotalList'
-import { useActionsBarOverview } from '../../hooks/useActionsBarOverview'
+import { TActionBarList } from '../ActionsBar'
+import { isContainsAll } from '../../utils/isContainsAll'
 
 type TTotalCardsProps = {
   widthActionBar: string;
-}
-
-function containsAll(arr1: string[], arr2: string[]): boolean {
-  return arr2.every(item => arr1.includes(item));
+  showItems: string[];
+  actionsBarList: TActionBarList[];
 }
 
 export const TotalCards: FC<TTotalCardsProps> = ({
   widthActionBar,
+  actionsBarList,
+  showItems
 }) => {
-  const {showItems, actionsBarList} = useActionsBarOverview()
   const totalListQuery = useTotalList();
   const [items, setItems] = useState(totalListQuery.data ?? []);
-  const [showList, setShowList] = useState(false);
+  const [isShowList, setIsShowList] = useState(false);
   const listRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
@@ -29,20 +29,17 @@ export const TotalCards: FC<TTotalCardsProps> = ({
 
   useEffect(() => {
     setItems(items => items.filter(item => !showItems.includes(item.id)));
-  }, [showItems])
-
-  useEffect(() => {
     if( totalListQuery.data && showItems.length !== 0  ) {
       const idList: string[] = [];
       totalListQuery.data.forEach(item => idList.push(item.id))
-      if (containsAll(showItems, idList)) {
-        setShowList(true)
+      if (isContainsAll(showItems, idList)) {
+        setIsShowList(true)
       }
     }
   }, [totalListQuery.data, showItems])
+  
 
-
-  if (showList) {
+  if (isShowList) {
     return null;
   }
 

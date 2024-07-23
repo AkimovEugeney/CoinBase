@@ -1,11 +1,11 @@
-import { FC, useEffect, useState } from 'react';
-import { ActionsBar } from '../../../components/ActionsBar/ActionsBar';
-import { useActionsBarOverview } from '../../../hooks/useActionsBarOverview';
+import { FC } from 'react';
+import { ActionsBar, TActionBarList } from '../../../components/ActionsBar/ActionsBar';
 import './OverviewSection.scss';
 
 interface IOverviewSectionProps {
   id: string;
   title: string;
+  actionsBarList: TActionBarList[];
   widthActionBar: string;
   children: React.ReactNode;
 }
@@ -13,17 +13,11 @@ interface IOverviewSectionProps {
 export const OverviewSection: FC<IOverviewSectionProps> = ({
   id,
   title,
+  actionsBarList,
   widthActionBar,
   children,
 }) => {
-  const { showItems, actionsBarList } = useActionsBarOverview();
-  const [isShowItems, setIsShowItems] = useState(true);
 
-  useEffect(() => {
-    setIsShowItems(showItems.includes(id));
-  }, [showItems, id]);
-
-  if (isShowItems)  return null;
 
   return (
     <section className='section'>
