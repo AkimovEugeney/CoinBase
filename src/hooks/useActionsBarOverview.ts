@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Cookies } from 'react-cookie';
 import { TActionBarList } from '../components/ActionsBar';
 
@@ -6,7 +6,7 @@ export const useActionsBarOverview = () => {
   const [showItems, setShowItems] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const cookies = new Cookies('sections', { path: '/overflow: ' });
+  const cookies = useMemo(() => new Cookies(), []); 
 
   const handleDelete = (id: string) => {
     setShowItems([...showItems, id]);
@@ -28,7 +28,7 @@ export const useActionsBarOverview = () => {
       setIsLoading(false);
       cookies.set('sections', showItems, options);
     } 
-  }, [showItems]);
+  }, [showItems, cookies]);
 
   const actionsBarList: TActionBarList[] = [
     { title: 'View', handleFn: handleDelete },
