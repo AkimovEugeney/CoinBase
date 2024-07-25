@@ -42,7 +42,7 @@ export const routes: TRoutes[] = [
   },
   {
     name: 'payments',
-    title: 'payments',
+    title: 'Payments',
     path () {return '/' + this.name;},
     component () {return <Overview title={this.title} />;},
     count: 10,

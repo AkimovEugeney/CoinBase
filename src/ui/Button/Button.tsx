@@ -1,8 +1,10 @@
 import { FC, HtmlHTMLAttributes } from 'react';
 import { Loader } from '../Loader'
 import styles from './Button.module.scss'
+import { Link } from 'react-router-dom'
 
 interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
+  link?: string
   isLoading?: boolean;
   isDisabled?: boolean;
   type?: "submit" | "reset" | "button";
@@ -10,6 +12,7 @@ interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IButtonProps> = ({
+  link,
   isLoading,
   isDisabled,
   children,
@@ -17,6 +20,13 @@ export const Button: FC<IButtonProps> = ({
   colorTheme,
   ...props
 }) => {
+  if (link) {
+    return (
+      <Link to={link} className={styles.button} data-color-theme={colorTheme}>
+        {isLoading ? <Loader color="pink" /> : <p>{children}</p>}
+      </Link>
+    )
+  }
   return (
     <button
     className={styles.button}

@@ -62,3 +62,15 @@ font-weight: 700;
   background-color: darkgrey; /* Ползунок темно-серого цвета */
   border: 2px solid white; /* С белыми границами */
 }
+
+.center {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.overview-btn-wrapp {
+  display: flex;
+  justify-content: center;
+  padding-top: 34px;
+}

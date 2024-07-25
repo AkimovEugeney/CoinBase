@@ -1,5 +1,6 @@
 .actionBar {
   position: absolute;
+  z-index: 15;
   &Btn {
     display: flex;
     align-items: center;

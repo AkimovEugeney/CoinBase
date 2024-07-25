@@ -4,12 +4,12 @@ import styles from './ActionsBar.module.scss'
 
 export type TActionBarList = {
   title: string;
-  handleFn: (id:string) => void;
+  handleFn: (id?:string) => void;
 }
 interface IActionsBarProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
   list: TActionBarList[];
-  id: string;
+  id?: string;
 }
 
 export const ActionsBar: FC<IActionsBarProps> = ({width, list, id, ...props}) => {
@@ -45,7 +45,7 @@ export const ActionsBar: FC<IActionsBarProps> = ({width, list, id, ...props}) =>
         {list.map((item) => {
           return (
             <li key={item.title}>
-              <button onClick={() => item.handleFn(id)}>{item.title}</button>
+              <button onClick={() => id ? item.handleFn(id) : item.handleFn()}>{item.title}</button>
             </li>
           )
         })}

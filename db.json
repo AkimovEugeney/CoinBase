@@ -1,21 +1,21 @@
 {
   "totals": [
     {
-      "id" : "1",
+      "id": "1",
       "title": "Total Number Of Users",
       "count": "1000",
       "precent": 22.8,
       "trend": true
     },
     {
-      "id" : "2",
+      "id": "2",
       "title": "Total Number Of Agents",
       "count": "5000",
       "precent": 11.8,
       "trend": false
     },
     {
-      "id" : "3",
+      "id": "3",
       "title": "Total Number Of Transactions",
       "count": "7000",
       "precent": 11.8,
@@ -42,7 +42,8 @@
           "name": "UK E-Code Card",
           "value": "N400.00"
         }
-      ]
+      ],
+      "id": "1418"
     },
     {
       "title": "Amazon Card",
@@ -63,7 +64,8 @@
           "name": "UK E-Code Card",
           "value": "N400.00"
         }
-      ]
+      ],
+      "id": "4842"
     },
     {
       "title": "Bitcoin",
@@ -84,7 +86,8 @@
           "name": "Bitcoin BTC",
           "value": "N400.00"
         }
-      ]
+      ],
+      "id": "45d9"
     },
     {
       "title": "iTunes Cards",
@@ -105,8 +108,234 @@
           "name": "UK E-Code Card",
           "value": "N400.00"
         }
-      ]
+      ],
+      "id": "ec4e"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-1.jpeg",
+      "email": "Ramonridwan@proonmail.com",
+      "block": false
+    },
+    {
+      "id": "2",
+      "status": "Down",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-2.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "3",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-3.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "4",
+      "status": "Pending",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-4.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "5",
+      "status": "Down",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-5.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "6",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-6.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "7",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-7.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "8",
+      "status": "Pending",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-8.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "9",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-9.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "10",
+      "status": "Active",
+      "name": "Fill Allen",
+      "avatar": "/user-1.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "11",
+      "status": "Down",
+      "name": "Fill Allen",
+      "avatar": "/user-2.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "12",
+      "status": "Active",
+      "name": "Fill Allen",
+      "avatar": "/user-3.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "13",
+      "status": "Active",
+      "name": "Fill Allen",
+      "avatar": "/user-4.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "14",
+      "status": "Down",
+      "name": "Fill Allen",
+      "avatar": "/user-5.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "15",
+      "status": "Pending",
+      "name": "Fill Allen",
+      "avatar": "/user-6.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "16",
+      "status": "Active",
+      "name": "Fill Allen",
+      "avatar": "/user-7.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "17",
+      "status": "Active",
+      "name": "Fill Allen",
+      "avatar": "/user-8.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "18",
+      "status": "Pending",
+      "name": "Fill Allen",
+      "avatar": "/user-9.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    }
+  ],
+  "agents": [
+    {
+      "id": "1",
+      "status": "Active",
+      "name": "Quadri Lawal",
+      "avatar": "/agent-1.jpeg",
+      "email": "Quaderilawal@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "2",
+      "status": "Active",
+      "name": "Tusweet iyanah",
+      "avatar": "/agent-2.jpeg",
+      "email": "Tusweetiyanah@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "3",
+      "status": "Active",
+      "name": "Ramon Ridwan",
+      "avatar": "/agent-3.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "4",
+      "status": "Active",
+      "name": "Lai Muhammed",
+      "avatar": "/agent-4.jpeg",
+      "email": "Laimuhammed@protonmail.com",
+      "block": false
+    },
+    {
+      "id": "5",
+      "status": "Active",
+      "name": "Tunde Abdul",
+      "avatar": "/agent-5.jpeg",
+      "email": "Tundeabdul@protonmail.com",
+      "block": false
+    }
+  ],
+  "users-and-agents": [
+    {
+      "id": "1",
+      "status": "Processing",
+      "name": "Quadri Lawal",
+      "avatar": "/agent-1.jpeg",
+      "email": "Quaderilawal@protonmail.com",
+      "block": false,
+      "role": "Agent"
+    },
+    {
+      "id": "2",
+      "status": "Decline",
+      "name": "Tusweet iyanah",
+      "avatar": "/user-1.jpeg",
+      "email": "Tusweetiyanah@protonmail.com",
+      "block": false,
+      "role": "User"
+    },
+    {
+      "id": "3",
+      "status": "Pending",
+      "name": "Ramon Ridwan",
+      "avatar": "/user-3.jpeg",
+      "email": "Ramonridwan@protonmail.com",
+      "block": false,
+      "role": "User"
+    },
+    {
+      "id": "4",
+      "status": "Decline",
+      "name": "Lai Muhammed",
+      "avatar": "/agent-4.jpeg",
+      "email": "Laimuhammed@protonmail.com",
+      "block": false,
+      "role": "Agent"
     }
   ]
-
 }
