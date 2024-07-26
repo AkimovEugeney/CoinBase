@@ -1,4 +1,6 @@
 import { Overview } from '../pages/Overview/Overview';
+import { Users } from '../pages/Users'
+import { Agents } from '../pages/Agents'
 
 export type TRoutes = {
   name: string;
@@ -19,13 +21,13 @@ export const routes: TRoutes[] = [
     name: 'users',
     title: 'Users',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Users title={this.title} />;},
   },
   {
     name: 'agents',
     title: 'Agents',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Agents title={this.title} />;},
   },
   {
     name: 'cards',

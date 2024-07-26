@@ -64,7 +64,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/users' withCheckbox={false} limit={5} />
+            <UserList type='/users' withCheckbox={false} limit={5} currentPage={1}/>
             <div className='overview-btn-wrapp'><Button link='/users'>View More</Button></div>
           </OverviewSection>
         )}
@@ -75,7 +75,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/agents' withCheckbox={false} limit={5} />
+            <UserList type='/agents' withCheckbox={false} limit={5} currentPage={1}/>
             <div className='overview-btn-wrapp'><Button link='/agents'>View More</Button></div>
           </OverviewSection>
         )}
@@ -87,7 +87,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/users-and-agents' withCheckbox={false} limit={4} />
+            <UserList type='/users-and-agents' withCheckbox={false} limit={4} currentPage={1}/>
             <div className='overview-btn-wrapp'><Button link='/payments'>View More</Button></div>
           </OverviewSection>
         )}

@@ -14,8 +14,6 @@ body {
   overflow: hidden;
 }
 
-
-
 .svgColor path {
   stroke: var(--color-light);
 }
@@ -49,8 +47,8 @@ body {
 
 .main-title {
   color: var(--color-text);
-font-size: 16px;
-font-weight: 700;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .main::-webkit-scrollbar {
@@ -73,4 +71,16 @@ font-weight: 700;
   display: flex;
   justify-content: center;
   padding-top: 34px;
+}
+
+.section-inner {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+}
+
+.text {
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
 }
