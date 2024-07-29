@@ -369,5 +369,62 @@
       "block": false,
       "role": "Agent"
     }
+  ], 
+  "statistics": [
+    {
+      "id": "1",
+      "name": "Amazon",
+      "score": 40
+    },
+    {
+      "id": "2",
+      "name": "Google",
+      "score": 47
+    },
+    {
+      "id": "3",
+      "name": "iTunes",
+      "score": 20
+    },
+    {
+      "id": "4",
+      "name": "Payoneer",
+      "score": 34
+    },
+    {
+      "id": "5",
+      "name": "Bitcoin",
+      "score": 41
+    },
+    {
+      "id": "6",
+      "name": "Ethereum",
+      "score": 37
+    },
+    {
+      "id": "7",
+      "name": "Tecno",
+      "score": 25
+    },
+    {
+      "id": "8",
+      "name": "Paypal",
+      "score": 40
+    },
+    {
+      "id": "9",
+      "name": "Aliexpress",
+      "score": 48
+    },
+    {
+      "id": "10",
+      "name": "Konga",
+      "score": 49
+    },
+    {
+      "id": "11",
+      "name": "Jumia",
+      "score": 45
+    }
   ]
 }

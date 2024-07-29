@@ -1,14 +1,20 @@
+import { useQuery } from '@tanstack/react-query';
 import { FC, useContext } from 'react';
+import { queryClient } from '../../api/queryClient';
+import { getStatistic } from '../../api/statistics';
+import { BarDiagram } from '../../components/BarDiagram';
 import { ConversionRateList } from '../../components/ConversionRateList/ConversionRateList';
 import { OverviewSectionTrans } from '../../components/OverviewSectionTrans';
 import { TotalCards } from '../../components/TotalCards/TotalCards';
 import { UserList } from '../../components/UserList';
 import { useActionsBarOverview } from '../../hooks/useActionsBarOverview';
 import { ThemeContext } from '../../Providers/ThemeProvider';
+import { Button } from '../../ui/Button/Button';
 import { Icon } from '../../ui/Icon/Icon';
 import './Overview.scss';
 import { OverviewSection } from './OverviewSection/OverviewSection';
-import { Button } from '../../ui/Button/Button'
+import { Loader } from '../../ui/Loader'
+import { Error } from '../../ui/Error/Error'
 
 type TOverview = {
   title: string;
@@ -19,6 +25,15 @@ export const Overview: FC<TOverview> = ({ title }) => {
   const { showItems, setShowItems, actionsBarList, isLoading } =
     useActionsBarOverview();
   const widthActionBar = '63';
+
+  const statisticQuery = useQuery(
+    {
+      queryKey: ['statistics'],
+      queryFn: getStatistic,
+    },
+    queryClient
+  );
+
 
   return (
     <>
@@ -64,8 +79,33 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/users' withCheckbox={false} limit={5} currentPage={1}/>
-            <div className='overview-btn-wrapp'><Button link='/users'>View More</Button></div>
+            <UserList
+              type='/users'
+              withCheckbox={false}
+              limit={5}
+              currentPage={1}
+            />
+            <div className='overview-btn-wrapp'>
+              <Button link='/users'>View More</Button>
+            </div>
+          </OverviewSection>
+        )}
+        {showItems.includes('205') || isLoading ? null : (
+          <OverviewSection
+            id='205'
+            title='Statistics'
+            actionsBarList={actionsBarList}
+            widthActionBar={widthActionBar}
+          >
+            {statisticQuery.isLoading && <Loader />}
+            {statisticQuery.error && <Error title={statisticQuery.error.message} />}
+            {statisticQuery.isSuccess && (
+              <BarDiagram
+              label='Avarage Score'
+              labels={statisticQuery.data?.map(data => data.name)}
+              data={statisticQuery.data?.map(data => data.score)}
+            />
+            )}
           </OverviewSection>
         )}
         {showItems.includes('206') || isLoading ? null : (
@@ -75,8 +115,15 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/agents' withCheckbox={false} limit={5} currentPage={1}/>
-            <div className='overview-btn-wrapp'><Button link='/agents'>View More</Button></div>
+            <UserList
+              type='/agents'
+              withCheckbox={false}
+              limit={5}
+              currentPage={1}
+            />
+            <div className='overview-btn-wrapp'>
+              <Button link='/agents'>View More</Button>
+            </div>
           </OverviewSection>
         )}
 
@@ -87,8 +134,15 @@ export const Overview: FC<TOverview> = ({ title }) => {
             actionsBarList={actionsBarList}
             widthActionBar={widthActionBar}
           >
-            <UserList type='/users-and-agents' withCheckbox={false} limit={4} currentPage={1}/>
-            <div className='overview-btn-wrapp'><Button link='/payments'>View More</Button></div>
+            <UserList
+              type='/users-and-agents'
+              withCheckbox={false}
+              limit={4}
+              currentPage={1}
+            />
+            <div className='overview-btn-wrapp'>
+              <Button link='/payments'>View More</Button>
+            </div>
           </OverviewSection>
         )}
       </div>

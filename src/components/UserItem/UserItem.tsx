@@ -88,7 +88,7 @@ export const UserItem: FC<TUserItemProps> = ({ type, withCheckbox, data, isCheck
 
   return (
     <div
-      className={`${styles.item} ${
+      className={`item ${styles.item}  ${
         withCheckbox && !isBlocked ? styles.checkbox : ''
       } ${isBlocked ? styles.block : ''}`}
     >

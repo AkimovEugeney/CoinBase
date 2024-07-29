@@ -59,12 +59,8 @@ export const UserList: FC<TUserList> = ({
     userQuery.data,
     setTotal,
     setIsNext,
+    currentPage
   ]);
-
-  useEffect(() => {
-    console.log(allData);
-    
-  }, [allData]);
 
   let list: string[] = ['Account Status', 'User Name', 'Email', 'Action'];
   if (type === '/users-and-agents') {
