@@ -369,7 +369,7 @@
       "block": false,
       "role": "Agent"
     }
-  ], 
+  ],
   "statistics": [
     {
       "id": "1",
@@ -425,6 +425,149 @@
       "id": "11",
       "name": "Jumia",
       "score": 45
+    }
+  ],
+  "transactions": [
+    {
+      "id": "12345671",
+      "date": "14/01/2019",
+      "type": "coin",
+      "name": "Bitcoin",
+      "value": "$100",
+      "return": "#18000",
+      "status": "Completed"
+    },
+    {
+      "id": "12345672",
+      "date": "14/01/2019",
+      "type": "card",
+      "name": "Amazon",
+      "value": "$100",
+      "return": "#18000",
+      "status": "Failed"
+    },
+    {
+      "id": "12345673",
+      "date": "14/01/2019",
+      "type": "coin",
+      "name": "Bitcoin",
+      "value": "$100",
+      "return": "#18000",
+      "status": "In Progress"
+    },
+    {
+      "id": "12345674",
+      "date": "14/01/2019",
+      "type": "card",
+      "name": "Bitcoin",
+      "value": "$100",
+      "return": "#18000",
+      "status": "Completed"
+    }
+  ],
+  "payments": [
+    {
+      "id": "29840980",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840981",
+      "type": "Agent",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Pending",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840982",
+      "type": "Agent",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Processing",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840983",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840984",
+      "type": "Agent",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840985",
+      "type": "Agent",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Cancelled",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840986",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840987",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840988",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Processing",
+      "email": "Ramonridwan@protonmail.com"
+    },
+    {
+      "id": "29840989",
+      "type": "User",
+      "amount": "39,000.00",
+      "date": "14/01/2019",
+      "status": "Paid",
+      "email": "Ramonridwan@protonmail.com"
+    }
+  ],
+  "total-user": [
+    {
+      "id": "1",
+      "title": "Total Number Of Transactions",
+      "count": "1000",
+      "precent": 22.8,
+      "trend": true
+    },
+    {
+      "id": "2",
+      "title": "Total Amount Earned",
+      "count": "23000",
+      "precent": 22.8,
+      "trend": true
+    },
+    {
+      "id": "3",
+      "title": "Total Amount In Wallet",
+      "count": "0",
+      "precent": 22.8,
+      "trend": true
     }
   ]
 }

@@ -9,7 +9,7 @@ interface ITooltip extends HTMLAttributes<HTMLDivElement> {
 }
 export const DiagramTooltip: FC<ITooltip> = ({tooltip, max = 100, isShowTooltip, ...props}) => {
   return (
-    <div className={`${styles.tooltip} ${isShowTooltip ? '' : styles.hidden}`} style={{top: tooltip.y - 120, left: tooltip.x - 46}} {...props}>
+    <div className={`${styles.tooltip} ${isShowTooltip ? '' : styles.hidden}`} style={{top: tooltip.y - 45, left: tooltip.x - 46}} {...props}>
       <h4>{tooltip.label}</h4>
       <p>{tooltip.value}/{max}</p>
       <span className={styles.progress}>

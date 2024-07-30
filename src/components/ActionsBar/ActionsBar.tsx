@@ -41,7 +41,7 @@ export const ActionsBar: FC<IActionsBarProps> = ({width, list, id, ...props}) =>
         <span></span>
         <span></span>
       </button>
-      <ul style={{width: width + 'px'}} className={`${styles.actionBarList} ${isActive ? styles.active : ''}` }>
+      <ul style={{width: width + 'px'}} className={`${styles.actionBarList} ${isActive ? styles.active : ''} ${list.length === 1 ? styles.oneElement : ''}` }>
         {list.map((item) => {
           return (
             <li key={item.title}>

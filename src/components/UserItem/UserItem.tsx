@@ -20,6 +20,7 @@ import { ActionsBar } from '../ActionsBar';
 import { UserView } from '../UserView';
 import styles from './UserItem.module.scss';
 import { colorStatus } from '../../utils/statusColor'
+import { useNavigate } from 'react-router-dom'
 
 type TUserItemProps = {
   type: TGetUserProps;
@@ -61,10 +62,10 @@ export const UserItem: FC<TUserItemProps> = ({ type, withCheckbox, data, isCheck
     setChecked(!checked);
   }
 
-  
+  const navigate = useNavigate()
 
   const actionBarList = [
-    { title: 'View', handleFn: () => console.log('View User') },
+    { title: 'View', handleFn: () =>  navigate(`/user/${data.id}`)},
     {
       title: 'Block User',
       handleFn: () => {

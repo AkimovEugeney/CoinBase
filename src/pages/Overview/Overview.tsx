@@ -6,15 +6,18 @@ import { BarDiagram } from '../../components/BarDiagram';
 import { ConversionRateList } from '../../components/ConversionRateList/ConversionRateList';
 import { OverviewSectionTrans } from '../../components/OverviewSectionTrans';
 import { TotalCards } from '../../components/TotalCards/TotalCards';
+import { TransactionsList } from '../../components/TransactionsList/TransactionsList';
 import { UserList } from '../../components/UserList';
 import { useActionsBarOverview } from '../../hooks/useActionsBarOverview';
+import { useGetTransactions } from '../../hooks/useGetTransactions';
+import { useTotalList } from '../../hooks/useTotalList';
 import { ThemeContext } from '../../Providers/ThemeProvider';
 import { Button } from '../../ui/Button/Button';
+import { Error } from '../../ui/Error/Error';
 import { Icon } from '../../ui/Icon/Icon';
+import { Loader } from '../../ui/Loader';
 import './Overview.scss';
 import { OverviewSection } from './OverviewSection/OverviewSection';
-import { Loader } from '../../ui/Loader'
-import { Error } from '../../ui/Error/Error'
 
 type TOverview = {
   title: string;
@@ -26,6 +29,8 @@ export const Overview: FC<TOverview> = ({ title }) => {
     useActionsBarOverview();
   const widthActionBar = '63';
 
+  const transactionsQuery = useGetTransactions(1, 4);
+
   const statisticQuery = useQuery(
     {
       queryKey: ['statistics'],
@@ -33,7 +38,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
     },
     queryClient
   );
-
+  const totalListQuery = useTotalList('/totals', 'totalList');
 
   return (
     <>
@@ -42,13 +47,16 @@ export const Overview: FC<TOverview> = ({ title }) => {
         <Icon name='calendar' isWhite={theme === 'dark'} />
       </div>
       <div className='overview-inner'>
-        {isLoading ? null : (
-          <TotalCards
-            widthActionBar={widthActionBar}
-            actionsBarList={actionsBarList}
-            showItems={showItems}
-          />
-        )}
+        {isLoading
+          ? null
+          : totalListQuery.isSuccess && (
+              <TotalCards
+                data={totalListQuery.data}
+                widthActionBar={widthActionBar}
+                actionsBarList={actionsBarList}
+                showItems={showItems}
+              />
+            )}
 
         {showItems.includes('200') || isLoading ? null : (
           <OverviewSection
@@ -98,13 +106,15 @@ export const Overview: FC<TOverview> = ({ title }) => {
             widthActionBar={widthActionBar}
           >
             {statisticQuery.isLoading && <Loader />}
-            {statisticQuery.error && <Error title={statisticQuery.error.message} />}
+            {statisticQuery.error && (
+              <Error title={statisticQuery.error.message} />
+            )}
             {statisticQuery.isSuccess && (
               <BarDiagram
-              label='Avarage Score'
-              labels={statisticQuery.data?.map(data => data.name)}
-              data={statisticQuery.data?.map(data => data.score)}
-            />
+                label='Avarage Score'
+                labels={statisticQuery.data?.map(data => data.name)}
+                data={statisticQuery.data?.map(data => data.score)}
+              />
             )}
           </OverviewSection>
         )}
@@ -142,6 +152,25 @@ export const Overview: FC<TOverview> = ({ title }) => {
             />
             <div className='overview-btn-wrapp'>
               <Button link='/payments'>View More</Button>
+            </div>
+          </OverviewSection>
+        )}
+        {showItems.includes('209') || isLoading ? null : (
+          <OverviewSection
+            id='209'
+            title='Transactions'
+            actionsBarList={actionsBarList}
+            widthActionBar={widthActionBar}
+          >
+            {transactionsQuery.isLoading && <Loader />}
+            {transactionsQuery.error && (
+              <Error title={transactionsQuery.error.message} />
+            )}
+            {transactionsQuery.isSuccess && (
+              <TransactionsList data={transactionsQuery.data.data} />
+            )}
+            <div className='overview-btn-wrapp'>
+              <Button link='/transactions'>View More</Button>
             </div>
           </OverviewSection>
         )}

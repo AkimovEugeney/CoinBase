@@ -7,6 +7,7 @@ import { Error } from '../../ui/Error/Error';
 import { Loader } from '../../ui/Loader';
 import { UserItem } from './../UserItem/UserItem';
 import styles from './UserList.module.scss';
+import { useViewMore } from '../../hooks/useVeiewMore'
 
 type TUserList = {
   currentPage: number;
@@ -36,30 +37,23 @@ export const UserList: FC<TUserList> = ({
     queryClient
   );
 
-  const [allData, setAllData] = useState(userQuery.data?.data ?? []);
+  const {allData, isNext} = useViewMore(userQuery.data)
 
   useEffect(() => {
     if (userQuery.data) {
-      setAllData(prevData => {
-         if (prevData.length == 0) {
-          return [...prevData, ...userQuery.data.data];
-         } else if (currentPage > 1) {
-            return [...prevData, ...userQuery.data.data];
-         } else return [...userQuery.data.data];
-      });
       if (setTotal) {
         setTotal(userQuery.data.items);
       }
-      if (setIsNext && userQuery.data.next === null) {
-        setIsNext(false);
+      if (setIsNext ) {
+        setIsNext(isNext);
       }
     }
     
   }, [
     userQuery.data,
     setTotal,
-    setIsNext,
-    currentPage
+    isNext,
+    setIsNext
   ]);
 
   let list: string[] = ['Account Status', 'User Name', 'Email', 'Action'];

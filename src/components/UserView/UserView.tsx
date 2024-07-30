@@ -6,9 +6,10 @@ import { TEdit, TNameState } from '../../hooks/useEditing'
 
 type TUserViewProps = {
   data: TUser;
-  nameState: TNameState;
-  edit: TEdit;
-  handleBlur: () => void;
+  size?: 'lg'
+  nameState?: TNameState;
+  edit?: TEdit;
+  handleBlur?: () => void;
   style?: CSSProperties;
 };
 
@@ -18,21 +19,23 @@ export const UserView: FC<TUserViewProps> = ({
   edit,
   handleBlur,
   style,
+  size
 }) => {
   return (
-    <div className={styles.user} style={style}>
+    <div className={`${styles.user} ${size === 'lg' ? styles.lg : ''}`} style={style}>
       <img className={styles.userImg} src={data.avatar} alt={data.name} />
-      {edit.isEditing ? (
+      {edit?.isEditing && nameState && handleBlur ? (
         <Input
           inputRef={nameState.nameRef}
           value={nameState.inputName}
-          onChange={e => nameState.setInputName(e.currentTarget.value)}
+          onChange={e => nameState?.setInputName(e.currentTarget.value)}
           onBlur={() => handleBlur()}
           autoFocus
         />
       ) : (
         <p className={styles.userName}>
-          {nameState.inputName}
+          {!edit && data.name}
+          {nameState?.inputName}
           {data.role && <span className={styles.userRole}>{data.role}</span>}
         </p>
       )}

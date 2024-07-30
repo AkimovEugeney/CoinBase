@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { routes, TRoutes } from '../../const/routes';
 import './Main.scss';
+import { User } from '../../pages/User'
 
 const pages: TRoutes[] = routes;
 
@@ -14,6 +15,9 @@ export const Main = () => {
     const page = pages.find(page => location.pathname.includes(page.path()));
     if (page) {
       setTitle(page.title);
+    }
+    if (location.pathname.includes('/user/')) {
+      setTitle('Users');
     }
   }, [location.pathname]);
 
@@ -39,6 +43,7 @@ export const Main = () => {
               />
             );
           })}
+          <Route path='/user/:id' element={<User/>}/>
         </Routes>
       </div>
     </main>

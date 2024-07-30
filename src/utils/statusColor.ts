@@ -1,16 +1,17 @@
 export type TStatusColor = 'green' | 'red' | 'gray' | 'gradient' | 'pomidoro' | 'red-night'
 
 export function colorStatus(status: string): TStatusColor {
-  switch (status) {
-    case 'Active' || 'Processing' || 'Successful' || 'Completed':
+  
+  switch (true) {
+    case ['Active' , 'Successful' , 'Completed', 'Paid'].includes(status):
       return 'green';
-    case 'Down' :
+    case status == 'Down' :
       return 'red';
-    case 'Decline' || 'Cancelled':
+    case ['Decline' , 'Cancelled'].includes(status):
       return 'red-night';
-    case 'Pending' || 'In Progress' || 'Paid':
+    case ['Pending' , 'In Progress'].includes(status):
       return 'gradient';
-    case 'Processing':
+    case status == 'Processing':
       return 'gray';
     default:
       return 'pomidoro';

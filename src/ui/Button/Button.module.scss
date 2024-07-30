@@ -1,5 +1,7 @@
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   max-width: none;
   width: 134px;
   height: 42px;
@@ -14,6 +16,14 @@
   line-height: 15px;
   text-align: center;
   transition: outline 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &[data-size='sm'] {
+    padding: 0;
+    width: 91px;
+    height: 27px;
+    font-size: 12px;
+    font-weight: 700;
+  }
 
   &:disabled {
     background: #a4a3a3;

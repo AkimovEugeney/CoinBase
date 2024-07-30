@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { z } from 'zod';
 import { API_URL } from './apiUrl';
+import { PagesSchema } from './pagesSchema'
 
 const UserSchema = z.object({
   id: z.string(),
@@ -16,14 +17,8 @@ export type TUser = z.infer<typeof UserSchema>;
 const UserListSchema = z.array(UserSchema);
 export type TUserList = z.infer<typeof UserListSchema>;
 
-const GetUsersSchema = z.object({
-  first: z.number(),
-  prev: z.union([z.number(), z.null()]), // prev can be a number or null
-  next: z.union([z.number(), z.null()]), // next can be a number or null
-  last: z.number(),
-  pages: z.number(),
-  items: z.number(),
-  data: UserListSchema, // This is the TUserList schema
+const GetUsersSchema = PagesSchema.extend({
+  data: UserListSchema, 
 });
 export type TGetUsers = z.infer<typeof GetUsersSchema>;
 
@@ -61,5 +56,8 @@ export function blockUser({id, isBlocked}: TBlockUserParams) {
     .patch(`${API_URL}/users/${id}`, {
       block: isBlocked,
     })
-    // .then(data => UserListSchema.parse(data));
+}
+
+export function getUser(id: string): Promise<TUser> {
+  return axios.get(`${API_URL}/users/${id}`).then(res => res.data).then(data => UserSchema.parse(data));
 }

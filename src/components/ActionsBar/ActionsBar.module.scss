@@ -25,6 +25,7 @@
     opacity: 0;
     display: none;
 
+
     & li {
       position: relative;
       height: 27px;
@@ -62,11 +63,15 @@
 
     & li > button {
       position: relative;
+      width: 100%;
+      max-width: none;
+      height: 100%;
       z-index: 15;
       padding: 0 7px;
       color: var(--color-gray);
       font-size: 10px;
       font-weight: 400;
+      text-align: left;
       user-select: none; 
       transition: color .3s ease-in-out;
     }
@@ -74,6 +79,10 @@
     &.active {
       opacity: 1;
       display: flex;
+    }
+    
+    &.oneElement li::after {
+      border-radius: 4px 4px 4px 4px;
     }
   }
 }

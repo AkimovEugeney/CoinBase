@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import styles from './BarDiagram.module.scss'
 import { FC, useContext, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ThemeContext } from '../../Providers/ThemeProvider';
@@ -118,19 +119,21 @@ export const BarDiagram: FC<TBarDiagramProps> = ({ labels, label, data }) => {
         },
         external: function (context) {
           const { opacity } = context.tooltip;
+          setTimeout(() => {
           if (opacity === 1 && !isShowTooltip) {
-            console.log(context);
             setIsShowTooltip(true);
             setTooltipData({
-              label: context.tooltip.dataPoints[0].label,
+              // label: context.tooltip.dataPoints[0].label,
+              label: 'Avarage score',
               value: context.tooltip.dataPoints[0].raw as number,
               x: context.tooltip.x,
               y: context.tooltip.y,
             });
             return;
           } else if (opacity === 0 && isShowTooltip && !onMouseTooltip) {
-            setIsShowTooltip(false);
+                setIsShowTooltip(false);
           }
+        }, 200)
         },
       },
     },
@@ -156,12 +159,16 @@ export const BarDiagram: FC<TBarDiagramProps> = ({ labels, label, data }) => {
   };
   return (
     <div style={{ position: 'relative' }}>
+      <h3 className={styles.title}>My Own Report</h3>
       <Bar data={chartData} options={options} />
       <DiagramTooltip
         tooltip={tooltipData}
         isShowTooltip={isShowTooltip}
-        onMouseEnter={() => setOnMouseTooltip(true)}
-        onMouseLeave={() =>  setIsShowTooltip(false)}
+        onMouseEnter={() => {setOnMouseTooltip(true)}}
+        onMouseLeave={() => {
+          setIsShowTooltip(false)
+          setOnMouseTooltip(false)
+        }}
       />
     </div>
   );

@@ -14,8 +14,8 @@ export type TTotal = z.infer<typeof TotalSchema>
 export const TotalListSchema = z.array(TotalSchema)
 export type TTotalList = z.infer<typeof TotalListSchema>
 
-export  const getTotalList = (): Promise<TTotalList> => {
-  return axios.get(`${API_URL}/totals`)
+export  const getTotalList = (url: string): Promise<TTotalList> => {
+  return axios.get(`${API_URL}${url}`)
   .then(res => res.data)
   .then(data => TotalListSchema.parse(data))
 }

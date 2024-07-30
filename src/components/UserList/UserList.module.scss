@@ -15,6 +15,11 @@
   font-size: 12px;
   font-weight: 700;
 
+  & > li > h3 {
+    font-weight: 700;
+    font-size: 12px;
+  }
+
   &.checkbox {
     grid-template-columns: 35px 1fr 300px 1fr 50px;
   }

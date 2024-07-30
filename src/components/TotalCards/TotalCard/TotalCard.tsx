@@ -6,8 +6,8 @@ import { TTotal } from '../../../api/total'
 
 
 export type TTotalCardProps = {
-  widthActionBar: string;
-  actionsBarList: TActionBarList[];
+  widthActionBar?: string;
+  actionsBarList?: TActionBarList[];
 }
 interface ITotalCardProps extends TTotalCardProps{
   data: TTotal
@@ -17,7 +17,7 @@ interface ITotalCardProps extends TTotalCardProps{
 
 export const TotalCard: FC<ITotalCardProps> = ({
   data,
-  widthActionBar,
+  widthActionBar = '61px',
   actionsBarList,
 }) => {
   return (
@@ -29,12 +29,12 @@ export const TotalCard: FC<ITotalCardProps> = ({
           <p className={data.trend ? '' : styles.trendDown}>{data.precent}%</p>
         </div>
       </div>
-      <ActionsBar
+      {actionsBarList && <ActionsBar
         id={data.id}
         width={widthActionBar}
         list={actionsBarList}
         style={{ top: '22px', right: '22px' }}
-      />
+      />}
     </div>
   );
 };

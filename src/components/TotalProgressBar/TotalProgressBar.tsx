@@ -9,6 +9,8 @@ export const TotalProgressBar: FC<ITotalProgressBarProps> = ({count}) => {
   let progress: number = 100
   if (!count || parseInt(count) === 0) {
     count = '#0'
+  } else if (parseInt(count) > 10000) {
+    count = `#${count}`
   } else {
     progress = parseInt(count) / 100 // max 10000
   }

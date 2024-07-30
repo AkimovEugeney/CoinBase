@@ -1,6 +1,9 @@
 import { Overview } from '../pages/Overview/Overview';
 import { Users } from '../pages/Users'
 import { Agents } from '../pages/Agents'
+import { Statistics } from '../pages/Statistics'
+import { Transactions } from '../pages/Transactions'
+import { Payments } from '../pages/Payments'
 
 export type TRoutes = {
   name: string;
@@ -46,20 +49,20 @@ export const routes: TRoutes[] = [
     name: 'payments',
     title: 'Payments',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Payments title={this.title} />;},
     count: 10,
   },
   {
     name: 'transactions',
     title: 'Transactions',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Transactions title={this.title} />;},
   },
   {
     name: 'statistics',
     title: 'Statistics',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Statistics title={this.title} />;},
   },
   {
     name: 'logout',
