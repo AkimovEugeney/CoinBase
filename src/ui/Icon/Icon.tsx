@@ -25,7 +25,7 @@ export const Icon: FC<TPropsIcon> = ({name, isWhite}) => {
       return <Agents className={isWhite ? 'svgColorAg' : ''}/>
     case 'cards':
       return <Cards className={isWhite ? 'svgColor' : ''}/>
-    case 'bitcoin':
+    case 'coins':
       return <Bitcoin className={isWhite ? 'svgColorTransBtc' : ''}/>
     case 'payments':
       return <Payments className={isWhite ? 'svgColor' : ''}/>

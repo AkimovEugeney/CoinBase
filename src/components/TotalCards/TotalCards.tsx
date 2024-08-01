@@ -7,6 +7,7 @@ import { TTotalList } from '../../api/total'
 
 type TTotalCardsProps = {
   gap?: string
+  size?: 'sm'
   data: TTotalList
   widthActionBar?: string;
   showItems?: string[];
@@ -14,6 +15,7 @@ type TTotalCardsProps = {
 }
 
 export const TotalCards: FC<TTotalCardsProps> = ({
+  size,
   gap,
   data,
   widthActionBar,
@@ -50,11 +52,12 @@ export const TotalCards: FC<TTotalCardsProps> = ({
 
 
   return (
-    <ul ref={listRef} className={styles.list} style={{gap: gap}}>
+    <ul ref={listRef} className={styles.list} style={{gap: gap}} data-size={size}>
       {items.map(item => {
         return (
           <li key={item.id}>
             <TotalCard
+              size={size}
               data={item}
               widthActionBar={widthActionBar}
               actionsBarList={actionsBarList}

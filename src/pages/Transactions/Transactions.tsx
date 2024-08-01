@@ -39,6 +39,7 @@ export const Transactions: FC<TTransactions> = ({ title }) => {
         </span>
         <div className='overview-btn-wrapp'>
           <Button
+            colorTheme='white'
             isDisabled={!isNext}
             onClick={() => setCurrentPage(currentPage + 1)}
           >

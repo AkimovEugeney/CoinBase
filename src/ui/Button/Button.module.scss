@@ -17,6 +17,12 @@
   text-align: center;
   transition: outline 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
+  & > p {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
   &[data-size='sm'] {
     padding: 0;
     width: 91px;
@@ -34,7 +40,7 @@
     }
   }
 
-  &[data-color-theme='white'] {
+  &[data-color-theme= "white"] {
     background: var(--color-background-btnWhite);
 
     & p {

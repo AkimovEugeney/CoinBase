@@ -3,6 +3,8 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { routes, TRoutes } from '../../const/routes';
 import './Main.scss';
 import { User } from '../../pages/User'
+import { AddCard } from '../../pages/AddCard'
+import { AddCoin } from '../../pages/AddCoin'
 
 const pages: TRoutes[] = routes;
 
@@ -44,6 +46,8 @@ export const Main = () => {
             );
           })}
           <Route path='/user/:id' element={<User/>}/>
+          <Route path='/cards/add' element={<AddCard title='Add Card'/>}/>
+          <Route path='/coins/add' element={<AddCoin title='Bitcoin & Ethereum'/>}/>
         </Routes>
       </div>
     </main>

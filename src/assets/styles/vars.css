@@ -30,9 +30,13 @@ body {
   );
   --color-stroke: linear-gradient(184.5deg,rgb(253, 116, 155) 4.426%,rgb(40, 26, 200) 127.873%
   );
+  --color-dark-light: #000;
+  --color-pl: #858585;
 }
 
 body.dark {
+  --color-dark-light: #fff;
+  --color-pl: rgba(255, 255, 255, 0.5);
   --background-overviewSectionTrans: url('../../assets/img/backgroundOverviewSectionTransDark.svg') no-repeat;
   --linear-background: #1e0338;
   --background-color: #1e0338;
@@ -41,6 +45,5 @@ body.dark {
   --color-stroke: #fff;
   --color-text: #fff;
   --color-text-btnWhite: #fff;
-  --color-background-btnWhite: linear-gradient(184.5deg,rgb(253, 116, 155) 4.426%,rgb(40, 26, 200) 127.873%
-  );
+  --color-background-btnWhite: linear-gradient(184.5deg,rgb(253, 116, 155) 4.426%,rgb(40, 26, 200) 127.873%);
 }

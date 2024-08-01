@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import { TTransactionsItem } from '../../api/transactions'
 import styles from './TransactionsItem.module.scss'
 import { Status } from '../../ui/Status'
@@ -7,6 +7,7 @@ import { ActionsBar } from '../ActionsBar'
 import { useTransactionsAction } from '../../hooks/useTransactionsAction'
 import CardSVG from '../../assets/img/transactionsCard.svg?react'
 import CoinSVG from '../../assets/img/transactionsCoin.svg?react'
+import { ThemeContext } from '../../Providers/ThemeProvider'
 
 type TTransactionsItemProps = { 
   data: TTransactionsItem
@@ -23,14 +24,16 @@ export const TransactionsItem: FC<TTransactionsItemProps> = ({data}) => {
     },
   ];
 
+  const [theme] = useContext(ThemeContext)
+
   return (
     <div className={`item ${styles.item}`}>
       <span>{data.date}</span>
       <span>{data.id}</span>
       {data.type === 'coin' ? (
-        <CoinSVG/>
+        <CoinSVG className={theme === 'dark' ? styles.coinDark : ''}/>
       ) : (
-        <CardSVG/>
+        <CardSVG className={theme === 'dark' ? styles.cardDark : ''}/>
       )}
       <span>{data.name}</span>
       <span>{data.value}</span>

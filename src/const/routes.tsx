@@ -4,6 +4,8 @@ import { Agents } from '../pages/Agents'
 import { Statistics } from '../pages/Statistics'
 import { Transactions } from '../pages/Transactions'
 import { Payments } from '../pages/Payments'
+import { Cards } from '../pages/Cards'
+import { Coins } from '../pages/Coins'
 
 export type TRoutes = {
   name: string;
@@ -36,14 +38,14 @@ export const routes: TRoutes[] = [
     name: 'cards',
     title: 'Cards',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Cards title={this.title} />;},
     count: 10,
   },
   {
-    name: 'bitcoin',
-    title: 'Bitcoin',
+    name: 'coins',
+    title: 'Bitcoin & Ethereum',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Coins title={this.title} />;},
   },
   {
     name: 'payments',

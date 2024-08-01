@@ -18,6 +18,9 @@ import { Icon } from '../../ui/Icon/Icon';
 import { Loader } from '../../ui/Loader';
 import './Overview.scss';
 import { OverviewSection } from './OverviewSection/OverviewSection';
+import { useGetCards } from '../../hooks/useGetCards'
+import { LinkPlus } from '../../ui/LinkPlus/LinkPlus'
+import { Card } from '../../components/Card'
 
 type TOverview = {
   title: string;
@@ -30,6 +33,7 @@ export const Overview: FC<TOverview> = ({ title }) => {
   const widthActionBar = '63';
 
   const transactionsQuery = useGetTransactions(1, 4);
+  const getCardsQuery = useGetCards(1, 5)
 
   const statisticQuery = useQuery(
     {
@@ -79,6 +83,33 @@ export const Overview: FC<TOverview> = ({ title }) => {
             panel which you could edit and modify the view of the page to ya’
             preferred taste.
           </OverviewSectionTrans>
+        )}
+         {showItems.includes('202') || isLoading ? null : (
+          <OverviewSection
+            id='202'
+            title='Cards'
+            actionsBarList={actionsBarList}
+            widthActionBar={widthActionBar}
+            mb='40px'
+          >
+            <div className='cards-wrapp-overview'>
+              <ul className='cards-list-overview'>
+                {getCardsQuery.error && <Error title={getCardsQuery.error.message}/>}
+                {getCardsQuery.isLoading && <Loader/>}
+                {getCardsQuery.isSuccess && 
+                  getCardsQuery.data.map((item) => (
+                    <li key={item.id}>
+                      <Card data={item}/>
+                    </li>
+                  ))
+                }
+              </ul>
+              <LinkPlus size={52} link='/cards/add'/>
+            </div>
+            <div className='overview-btn-wrapp'>
+              <Button link='/cards'>View More</Button>
+            </div>
+          </OverviewSection>
         )}
         {showItems.includes('204') || isLoading ? null : (
           <OverviewSection

@@ -11,17 +11,19 @@ export type TTotalCardProps = {
 }
 interface ITotalCardProps extends TTotalCardProps{
   data: TTotal
+  size?: 'sm'
 }
 
 
 
 export const TotalCard: FC<ITotalCardProps> = ({
+  size,
   data,
   widthActionBar = '61px',
   actionsBarList,
 }) => {
   return (
-    <div className={styles.totalCard}>
+    <div className={styles.totalCard} data-size={size}>
       <div className={styles.totalWrapp}>
         <TotalProgressBar count={data.count} />
         <div className={styles.totalInner}>

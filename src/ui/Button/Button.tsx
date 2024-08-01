@@ -4,6 +4,7 @@ import styles from './Button.module.scss'
 import { Link } from 'react-router-dom'
 
 interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
+  form?: string;
   size?: 'lg' | 'md' | 'sm',
   link?: string
   isLoading?: boolean;
@@ -13,6 +14,7 @@ interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IButtonProps> = ({
+  form,
   size,
   link,
   isLoading,
@@ -31,6 +33,7 @@ export const Button: FC<IButtonProps> = ({
   }
   return (
     <button
+    form={form}
     className={styles.button}
     type={type}
     disabled={isDisabled || isLoading}

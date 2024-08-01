@@ -7,3 +7,16 @@
   flex-direction: column;
   row-gap: 33px;
 }
+
+.cards-wrapp-overview {
+  display: flex;
+  align-items: center;
+  column-gap: 45px;
+}
+
+.cards-list-overview {
+  display: grid;
+  grid-template-columns: repeat(5, 153px);
+  grid-template-rows: 117px;
+  column-gap: 10px;
+}

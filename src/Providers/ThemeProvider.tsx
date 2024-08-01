@@ -9,11 +9,11 @@ interface ThemeProviderProps {
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState('light')
 
-  // useEffect(() => {
-  //   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  //     setTheme('dark');
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+  }, []);
 
 
   useEffect(() => {

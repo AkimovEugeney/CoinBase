@@ -569,5 +569,207 @@
       "precent": 22.8,
       "trend": true
     }
+  ],
+  "payment-user": [
+    {
+      "id": "289272301",
+      "date": "22/12/2019",
+      "product": "Amazon Giftcard",
+      "productPrice": "50",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Successful"
+    },
+    {
+      "id": "289272302",
+      "date": "22/12/2019",
+      "product": "Scrill Giftcard",
+      "productPrice": "130",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Successful"
+    },
+    {
+      "id": "289272303",
+      "date": "22/12/2019",
+      "product": "Bitcoin",
+      "productPrice": "2",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Decline"
+    },
+    {
+      "id": "289272304",
+      "date": "22/12/2019",
+      "product": "Steam Giftcard",
+      "productPrice": "250",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Successful"
+    },
+    {
+      "id": "289272305",
+      "date": "22/12/2019",
+      "product": "Google Play Card",
+      "productPrice": "134",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Successful"
+    },
+    {
+      "id": "289272306",
+      "date": "22/12/2019",
+      "product": "Other Giftcard",
+      "productPrice": "400",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Pending"
+    },
+    {
+      "id": "289272307",
+      "date": "22/12/2019",
+      "product": "Amazon Giftcard",
+      "productPrice": "19",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "Ethereum",
+      "card": "4386",
+      "status": "Successful"
+    },
+    {
+      "id": "289272308",
+      "date": "22/12/2019",
+      "product": "Bitcoin",
+      "productPrice": "26",
+      "rate": "180",
+      "return": "36,000.00",
+      "amounts": "39.000.00",
+      "bank": "United Bank Africa",
+      "card": "4386",
+      "status": "Decline"
+    }
+  ],
+  "cards": [
+    {
+      "id": "4380",
+      "name": "Card",
+      "country": "US",
+      "type": "Amazon Card",
+      "currency": "USD",
+      "image": "/card-a.jpeg"
+    },
+    {
+      "id": "4381",
+      "name": "Card",
+      "country": "CA",
+      "type": "iTunes Card",
+      "currency": "USD",
+      "image": "/card-i.jpeg"
+    },
+    {
+      "id": "4382",
+      "name": "Card",
+      "country": "UK",
+      "type": "Google Play Card",
+      "currency": "USD",
+      "image": "/card-g.jpeg"
+    },
+    {
+      "id": "4383",
+      "name": "Card",
+      "country": "US",
+      "type": "Steam Card",
+      "currency": "USD",
+      "image": "/card-s.jpeg"
+    },
+    {
+      "id": "4384",
+      "name": "Card",
+      "country": "UK",
+      "type": "Other Cards",
+      "currency": "USD",
+      "image": "/card-o.jpeg"
+    },
+    {
+      "id": "4385",
+      "name": "Card",
+      "country": "UK",
+      "type": "Steam Card",
+      "currency": "USD",
+      "image": "/card-s.jpeg"
+    },
+    {
+      "id": "4386",
+      "name": "Card",
+      "country": "US",
+      "type": "Other Cards",
+      "currency": "USD",
+      "image": "/card-o.jpeg"
+    },
+    {
+      "id": "4387",
+      "name": "Card",
+      "country": "US",
+      "type": "iTunes Card",
+      "currency": "USD",
+      "image": "/card-i.jpeg"
+    },
+    {
+      "id": "4388",
+      "name": "Card",
+      "country": "US",
+      "type": "Google Play Card",
+      "currency": "USD",
+      "image": "/card-g.jpeg"
+    },
+    {
+      "id": "4389",
+      "name": "Card",
+      "country": "CA",
+      "type": "Amazon Card",
+      "currency": "USD",
+      "image": "/card-a.jpeg"
+    },
+    {
+      "id": "4390",
+      "name": "Card",
+      "country": "CA",
+      "type": "iTunes Card",
+      "currency": "USD",
+      "image": "/card-i.jpeg"
+    }
+  ],
+  "coins": [
+    {
+      "id": "4380",
+      "name": "Bitcoin",
+      "code": "645645654757",
+      "image": "/coin-b.jpeg"
+    },
+    {
+      "id": "4381",
+      "name": "Ethereum",
+      "code": "53453464536546",
+      "image": "/coin-e.jpeg"
+    }
   ]
 }
