@@ -6,6 +6,7 @@ import { Transactions } from '../pages/Transactions'
 import { Payments } from '../pages/Payments'
 import { Cards } from '../pages/Cards'
 import { Coins } from '../pages/Coins'
+import { Logout } from '../pages/Logout'
 
 export type TRoutes = {
   name: string;
@@ -70,6 +71,6 @@ export const routes: TRoutes[] = [
     name: 'logout',
     title: 'Logout',
     path () {return '/' + this.name;},
-    component () {return <Overview title={this.title} />;},
+    component () {return <Logout title={this.title} />;},
   },
 ];

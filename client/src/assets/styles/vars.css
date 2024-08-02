@@ -46,4 +46,5 @@ body.dark {
   --color-text: #fff;
   --color-text-btnWhite: #fff;
   --color-background-btnWhite: linear-gradient(184.5deg,rgb(253, 116, 155) 4.426%,rgb(40, 26, 200) 127.873%);
+  background-color: var(--background-color);
 }

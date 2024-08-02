@@ -5,11 +5,16 @@ import './Main.scss';
 import { User } from '../../pages/User'
 import { AddCard } from '../../pages/AddCard'
 import { AddCoin } from '../../pages/AddCoin'
+import { useNavigate } from 'react-router-dom'
 
 const pages: TRoutes[] = routes;
 
 export const Main = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('overview')
+  },[])
 
   const [title, setTitle] = useState('');
 

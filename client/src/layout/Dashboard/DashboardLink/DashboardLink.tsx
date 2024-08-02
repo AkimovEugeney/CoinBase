@@ -25,8 +25,6 @@ export const DashboardLink: FC<IDashboardLinkProps> = ({
     if (location.pathname.includes(name)) {
       handleClick(name);
     }
-    console.log(name);
-    
   }, [location, name, handleClick]);
 
   return (
